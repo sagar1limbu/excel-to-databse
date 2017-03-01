@@ -1,0 +1,96 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd"
+       xmlns:mvc="http://www.springframework.org/schema/mvc">
+
+
+
+    <bean id="dataSource"
+		class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/project1" />
+		<property name="username" value="root" />
+		<property name="password" value="" />
+	</bean>
+
+ 
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        
+<!--        this is instead of creating separate hibernate.cfg.xml-->
+        <property name="packagesToScan">
+         <list>
+<!--             -This scans for entity class @Entity-->
+           <value>com.project1.entity</value>
+           
+         </list>
+       </property>
+<!-- This has been absolete in hibernate 4      
+             <property name="configurationClass">
+            <value>org.hibernate.cfg.AnnotationConfiguration</value>
+        </property>-->
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                 <prop key="hibernate.hbm2ddl.auto">update</prop>
+                 <prop key="hibernate.current_session_context_class ">thread</prop>
+<!--               <prop key="hibernate.hbm2ddl.auto">create</prop>-->
+                
+            </props>
+        </property>
+    </bean>
+    
+    
+<!--<tx:annotation-driven transaction-manager="transactionManager" />-->
+
+<!--         org.springframework.beans.factory.BeanCreationException has been fixed by talako code-->
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <!--creating bean for multipartresolver-->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- maxUploadSize=10MB -->
+        <property name="maxUploadSize" value="10240000"/>
+    </bean>
+<!--    
+    <bean id="competitionDao" class="com.itn.dao.CompetitionDao">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+        
+    <bean id="competitionService" class="com.itn.service.CompetitionService">
+        <property name="competitionDao" ref="competitionDao"/>
+    </bean>
+    <bean id="userDao" class="com.itn.dao.UserDao">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="userService" class="com.itn.service.UserService">
+        <property name="udao" ref="userDao"/>
+    </bean>-->
+    <bean id="userDao" class="com.project1.Dao.UserDao">
+        <property name="sessionFactory" ref="sessionFactory"/> 
+    </bean>
+    <bean id="userService" class="com.project1.Service.UserService">
+        <property name="userDao" ref="userDao"/>
+        </bean>
+    <bean id="excelDao" class="com.project1.Dao.ExcelDao">
+           <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="excelService" class="com.project1.Service.ExcelService">
+           <property name="excelDao" ref="excelDao"/>
+    </bean>
+
+    <bean id="downloadExcel" class="com.project1.View.ExcelView" />
+</beans>

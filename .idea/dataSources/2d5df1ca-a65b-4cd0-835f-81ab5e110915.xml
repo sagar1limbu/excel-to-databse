@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="project1@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="project1">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="a"/>
+    <schema id="4" parent="1" name="adii"/>
+    <schema id="5" parent="1" name="assignment"/>
+    <schema id="6" parent="1" name="canteen"/>
+    <schema id="7" parent="1" name="college"/>
+    <schema id="8" parent="1" name="connection"/>
+    <schema id="9" parent="1" name="crime_reporting"/>
+    <schema id="10" parent="1" name="crs"/>
+    <schema id="11" parent="1" name="crwiki"/>
+    <schema id="12" parent="1" name="db_bhuwan_globalstyling"/>
+    <schema id="13" parent="1" name="enquiryform"/>
+    <schema id="14" parent="1" name="event"/>
+    <schema id="15" parent="1" name="eventmanagement"/>
+    <schema id="16" parent="1" name="information_schema"/>
+    <schema id="17" parent="1" name="ishwor"/>
+    <schema id="18" parent="1" name="it"/>
+    <schema id="19" parent="1" name="itss"/>
+    <schema id="20" parent="1" name="ittt"/>
+    <schema id="21" parent="1" name="javalogin"/>
+    <schema id="22" parent="1" name="jdbc"/>
+    <schema id="23" parent="1" name="kaaaateeee"/>
+    <schema id="24" parent="1" name="kaate"/>
+    <schema id="25" parent="1" name="kate"/>
+    <schema id="26" parent="1" name="katetravel"/>
+    <schema id="27" parent="1" name="laradb"/>
+    <schema id="28" parent="1" name="laravelpractise"/>
+    <schema id="29" parent="1" name="last"/>
+    <schema id="30" parent="1" name="librarymanagement"/>
+    <schema id="31" parent="1" name="ll"/>
+    <schema id="32" parent="1" name="login"/>
+    <schema id="33" parent="1" name="map"/>
+    <schema id="34" parent="1" name="marksheet"/>
+    <schema id="35" parent="1" name="mysql"/>
+    <schema id="36" parent="1" name="my_db"/>
+    <schema id="37" parent="1" name="newkate"/>
+    <schema id="38" parent="1" name="news"/>
+    <schema id="39" parent="1" name="performance_schema"/>
+    <schema id="40" parent="1" name="phpmyadmin"/>
+    <schema id="41" parent="1" name="quiz"/>
+    <schema id="42" parent="1" name="rabi"/>
+    <schema id="43" parent="1" name="root"/>
+    <schema id="44" parent="1" name="sadasd"/>
+    <schema id="45" parent="1" name="school"/>
+    <schema id="46" parent="1" name="search"/>
+    <schema id="47" parent="1" name="setttt"/>
+    <schema id="48" parent="1" name="springlogin"/>
+    <schema id="49" parent="1" name="tbl_user"/>
+    <schema id="50" parent="1" name="test"/>
+    <schema id="51" parent="1" name="urbannepal"/>
+    <schema id="52" parent="1" name="user"/>
+    <schema id="53" parent="1" name="webauth"/>
+    <schema id="54" parent="1" name="wiki"/>
+    <schema id="55" parent="1" name="wikiwiki"/>
+    <schema id="56" parent="1" name="wordpress"/>
+    <table id="57" parent="2" name="staff"/>
+    <table id="58" parent="2" name="staffss"/>
+    <table id="59" parent="2" name="user"/>
+    <column id="60" parent="57" name="staff_id">
+      <Position>1</Position>
+      <DataType>int(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="57" name="staff_name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="57" name="exam_center">
+      <Position>3</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="57" name="time">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="57" name="date">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="65" parent="57" name="PRIMARY">
+      <ColNames>staff_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="66" parent="58" name="id">
+      <Position>1</Position>
+      <DataType>int(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="58" name="name">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="58" name="examcenter">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="58" name="time">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="70" parent="58" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="71" parent="59" name="user_id">
+      <Position>1</Position>
+      <DataType>int(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="72" parent="59" name="firstname">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="59" name="lastname">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="74" parent="59" name="email">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="59" name="username">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="59" name="password">
+      <Position>6</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="77" parent="59" name="PRIMARY">
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
